@@ -1,0 +1,27 @@
+{
+  "name": "phonecom-api",
+  "version": "0.0.1",
+  "description": "Phone.com API client",
+  "main": "index.js",
+  "dependencies": {
+    "debug": "^2.6.1",
+    "request": "^2.79.0",
+    "request-debug": "^0.2.0"
+  },
+  "devDependencies": {
+    "minimist": "^1.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davehorton/phonecom-api.git"
+  },
+  "author": "Dave Horton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davehorton/phonecom-api/issues"
+  },
+  "homepage": "https://github.com/davehorton/phonecom-api#readme"
+}
