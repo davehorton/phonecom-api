@@ -1,9 +1,10 @@
 {
   "name": "phonecom-api",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Phone.com API client",
   "main": "index.js",
   "dependencies": {
+    "clear-require": "^2.0.0",
     "debug": "^2.6.1",
     "request": "^2.79.0",
     "request-debug": "^0.2.0"
