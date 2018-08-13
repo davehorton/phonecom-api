@@ -1,17 +1,15 @@
-'use strict';
-
 const ApiClient = require('..') ;
 const argv = require('minimist')(process.argv.slice(2));
 const assert = require('assert') ;
 
-assert( argv.token, 'token is required') ;
-assert( argv.objectType, 'objectType is required') ;
-assert( argv.accountId, 'accountId is required') ;
+assert(argv.token, 'token is required') ;
+assert(argv.objectType, 'objectType is required') ;
+assert(argv.accountId, 'accountId is required') ;
 
-let api = new ApiClient(argv.token) ;
+const api = new ApiClient(argv.token) ;
 
 let fn ;
-switch( argv.objectType ) {
+switch (argv.objectType) {
   case 'Accounts': fn = api.listAccounts.bind(api, {fields: 'brief'}) ; break ;
   case 'Extensions': fn = api.listExtensions.bind(api, argv.accountId, {fields: 'brief'}); break ;
   case 'Applications': fn = api.listApplications.bind(api, argv.accountId, {fields: 'brief'}); break ;
@@ -32,16 +30,11 @@ switch( argv.objectType ) {
   case 'Subaccounts': fn = api.listSubaccounts.bind(api, argv.accountId, {fields: 'brief'}); break ;
   case 'Trunks': fn = api.listTrunks.bind(api, argv.accountId, {fields: 'brief'}); break ;
 
-
   default:
     assert(false, `unknown objectType ${argv.objectType}`);
 }
 
-
-
-fn( (err, data) => {
-  if( err ) {
-    throw err ;
-  }
+fn((err, data) => {
+  if (err) throw err ;
   console.log(`${JSON.stringify(data, null, '  ')}`);
 }) ;
